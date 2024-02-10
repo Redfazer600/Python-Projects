@@ -2,9 +2,8 @@
 # Creator: Alex Bevan - UP2198095
 # Date: 10/2/24
 # Name: Module Grades Calculator
-# Version: 3
-# Changes: ModuleCalculator class - functionality into a class as a pose to it raw in main
-# Nested inside a calculateModule.
+# Version: 4
+# Changes: tweaked some stuff - adding returns mainly.
 ####################
 
 
@@ -32,10 +31,10 @@ class ModuleCalculator:
         totalWeighting = self.weighting / self.weighting * 100
 
         if self.weighting != 100:
-            print(f'overall, you have {self.mark}% out of {self.weighting}%')
-            print(f'Scaled to 100% you have / are on track for {totalMark}% out of {totalWeighting}%')
+            return f'\noverall, you have {self.mark}% out of {self.weighting}%\n' + \
+                f'Scaled to 100% you have / are on track for {totalMark}% out of {totalWeighting}%'
         else:
-            print(f'You have {totalMark}% so far out of {totalWeighting}%\n\n')
+            return f'\nYou have {totalMark}% so far out of {totalWeighting}%\n\n'
 
 
 class Assessment:
@@ -56,4 +55,5 @@ class Assessment:
 def calculateModule():
     moduleGrade = ModuleCalculator()
     moduleGrade.getAssessments()
-    moduleGrade.calculateGrade()
+    output = moduleGrade.calculateGrade()
+    return output
