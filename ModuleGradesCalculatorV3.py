@@ -4,7 +4,6 @@
 # Name: Module Grades Calculator
 # Version: 3
 # Changes: ModuleCalculator class - functionality into a class as a pose to it raw in main
-# Also added a loop to allow for calculation of multiple modules until told to stop.
 # Nested inside a calculateModule.
 ####################
 
@@ -58,12 +57,3 @@ def calculateModule():
     moduleGrade = ModuleCalculator()
     moduleGrade.getAssessments()
     moduleGrade.calculateGrade()
-
-
-def main():
-
-    for i in range(int(input('\nEnter how many modules you wish to calculate:\t'))):
-        calculateModule()
-
-
-main()
